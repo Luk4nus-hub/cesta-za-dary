@@ -6,6 +6,7 @@ const STOPS = [
         icon: "⛽",
 		code: "ORLEN",	//Kód pro obnovu hry
 		secret: "8",	//Finální kód, který odemkne poslední stránku
+        photo: "images/orlen.jpg",  //Fotka, která se zobrazí na stránce s příběhem
         lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
         lng: 14.6133172,
         radius: 75,
@@ -207,7 +208,12 @@ function render() {
 
             <p class="story">
                 ${stop.story}
-            </p>			
+            </p>
+            
+            <img
+                src="${stop.photo}"
+                class="memory-photo"                
+            >
 
 			<p style="text-align:center;">
     			⭐ Tajné číslo:
