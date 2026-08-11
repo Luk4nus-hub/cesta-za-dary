@@ -134,8 +134,11 @@ function render() {
             <button onclick="checkLocation()">
                 📍 Ověřit polohu
             </button>
-
             <div id="gps-result"></div>
+
+			<button class="reset-button" onclick="resetGame()">
+    			🔄 Restartovat hru
+			</button>
 
         </div>
     `;
@@ -159,6 +162,10 @@ function render() {
             <button onclick="nextStop()">
                 Pokračovat
             </button>
+
+			<button class="reset-button" onclick="resetGame()">
+    			🔄 Restartovat hru
+			</button>
 
            <div class="progress-container">
                 <div
@@ -197,7 +204,9 @@ function nextStop() {
 
 function resetGame() {
     localStorage.removeItem("station");
+    localStorage.removeItem("phase");
     current = -1;
+    phase = "clue";
     render();
 }
 
