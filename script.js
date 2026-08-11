@@ -7,7 +7,7 @@ const STOPS = [
         lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
         lng: 14.6133172,
         radius: 75,
-        clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den! ⛽",
+        clue: "Tam, kde se naše cesty poprvé protnuly.<br>Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
@@ -17,7 +17,7 @@ const STOPS = [
 		lat: 50.1624961,
         lng: 14.7507606,
         radius: 75,
-		clue: "Docela nám to teklo po rukách! 🍦",
+		clue: "Moc jsem při tom teda nemlčeli.. 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
     {
@@ -29,6 +29,26 @@ const STOPS = [
         radius: 150,
 		clue: "Víš, že žáby nemají uši?!. 🏖️👙🐸",
         story: "Na koupání byla moc zima...👀"
+    },
+	{
+        title: "Hostivar H1",
+        icon: "🍺",
+		code: "HOSTIVAR",
+		lat: 50.0463592,
+        lng: 14.5494106,
+        radius: 50,
+		clue: "",
+        story: "Tady si vždy dáme do nosu! Tak samo i teď, jen tedy nealko."
+    },
+	{
+        title: "Náš Domov",
+        icon: "🏠",
+		code: "DOMOV",
+		lat: 50.0468075,
+        lng: 14.5553103,
+        radius: 50,
+		clue: "Další místo leží těsně před tím, než auta a motorky zmizí pod zemí. 🏠🏍️",
+        story: "Poslední místo tvého pátrání. Zde se dozvíš zda a jakou odměnu jsi celou dobu hledala. "
     }
 ];
 
@@ -282,11 +302,6 @@ function checkLocation() {
             🧪 DEBUG MODE
         </p>
 
-        <p>
-            LAT: ${position.coords.latitude}<br>
-            LNG: ${position.coords.longitude}
-        </p>
-		
         <button onclick="showStory()">
             Přeskočit GPS kontrolu
         </button>
