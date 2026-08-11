@@ -124,11 +124,17 @@ function render() {
                 Pokračovat
             </button>
 
-            <div class="progress">
-                ${"●".repeat(current + 1)}
-                ${"○".repeat(STOPS.length - current - 1)}
+           <div class="progress-container">
+                <div
+                    class="progress-bar"
+                    style="width:${((current + 1) / STOPS.length) * 100}%">
+                </div>
             </div>
 
+            <div class="progress-text">
+                    ${current + 1} / ${STOPS.length}
+            </div>
+            
             <div class="footer">
                 Verze 1 • Bez GPS
             </div>
