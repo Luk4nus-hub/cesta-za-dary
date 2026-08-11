@@ -1,16 +1,53 @@
 const STOPS = [
-  {
-    name: "Orlen Český Brod",
-    story: "Právě tady se naše cesty poprvé protnuly."
-  },
-  {
-    name: "Stanice 2",
-    story: "Každé dobrodružství začíná prvním krokem."
-  },
-  {
-    name: "Stanice 3",
-    story: "Další část příběhu čeká za další zatáčkou."
-  }
+
+{
+title:"Orlen Český Brod",
+icon:"⛽",
+story:"Právě tady se naše cesty poprvé protnuly."
+},
+
+{
+title:"Kavárna",
+icon:"☕",
+story:"Každé dobrodružství potřebuje zastávku na doplnění energie."
+},
+
+{
+title:"Vyhlídka",
+icon:"🌄",
+story:"Někdy je potřeba zastavit a rozhlédnout se kolem sebe."
+},
+
+{
+title:"Lesní cesta",
+icon:"🌲",
+story:"Ne všechny cesty jsou rovné. Ale právě to je dělá zajímavými."
+},
+
+{
+title:"Místo vzpomínek",
+icon:"📸",
+story:"Každé místo skrývá nějaký příběh."
+},
+
+{
+title:"Moto zastávka",
+icon:"🏍️",
+story:"Silnice pod koly. Vítr kolem helmy."
+},
+
+{
+title:"Předposlední stopa",
+icon:"🧭",
+story:"Cíl už není daleko."
+},
+
+{
+title:"Finální místo",
+icon:"❤️",
+story:"Poslední zastávka dnešního dobrodružství."
+}
+
 ];
 
 let current = 0;
