@@ -11,19 +11,19 @@ const STOPS = [
     {
         title: "Zmrzlina Čelákovice",
         icon: "🍦",
-	lat: 50.1624961,
+		lat: 50.1624961,
         lng: 14.7507606,
         radius: 50,
-	clue: "Docela nám to teklo po rukách! 🍦",
+		clue: "Docela nám to teklo po rukách! 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
     {
         title: "Las Vegas",
         icon: "🏖️👙🐸",
-	lat: 50.2682533,
+		lat: 50.2682533,
         lng: 14.6513617,
         radius: 20,
-	clue: "Víš, že žáby nemají uši?!. 🏖️👙🐸"
+		clue: "Víš, že žáby nemají uši?!. 🏖️👙🐸",
         story: "Na koupání byla moc zima...👀"
     }
 ];
