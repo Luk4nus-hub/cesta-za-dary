@@ -2,7 +2,7 @@ const DEBUG_MODE = true; //Tohle přepnout na false až to půjde live, jinak to
 const FINAL_CODE = "88888"; //Kód změnit dle toho co si bude člověk zapisovat
 const STOPS = [
     {
-        title: "Orlen Úvaly",
+        title: "ORLEN ÚVALY",
         icon: "⛽",
 		code: "ORLEN",	//Kód pro obnovu hry
 		secret: "8",	//Finální kód, který odemkne poslední stránku
@@ -13,19 +13,19 @@ const STOPS = [
         story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
-        title: "Zmrzlina Čelákovice",
+        title: "ZMRZLINA ČELÁKOVICE",
         icon: "🍦",
 		code: "ZMRZKA",
 		secret: "8",
 		lat: 50.1624961,
         lng: 14.7507606,
         radius: 75,
-		clue: "Moc jsem při tom teda nemlčeli.. 🍦",
+		clue: "Moc jsme při tom teda nemlčeli... 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
     {
-        title: "Las Vegas",
-        icon: "🏖️👙🐸",
+        title: "LAS VEGAS",
+        icon: "🐸",
 		code: "VEGAS",
 		secret: "8",
 		lat: 50.2682533,
@@ -35,7 +35,7 @@ const STOPS = [
         story: "Na koupání byla moc zima...👀"
     },
 	{
-        title: "Hostivar H1",
+        title: "HOSTIVAR H1",
         icon: "🍺",
 		code: "HOSTIVAR",
 		secret: "8",
@@ -46,7 +46,7 @@ const STOPS = [
         story: "Tady si vždy dáme do nosu! Tak samo i teď, jen tedy nealko."
     },
 	{
-        title: "Náš Domov",
+        title: "NÁŠ DOMOV",
         icon: "🏠",
 		code: "DOMOV",
 		secret: "8",
@@ -54,7 +54,7 @@ const STOPS = [
         lng: 14.5553103,
         radius: 50,
 		clue: "Další místo leží těsně před tím, než auta a motorky zmizí pod zemí. 🏠🏍️",
-        story: "Poslední místo tvého pátrání. Zde se dozvíš zda a jakou odměnu jsi celou dobu hledala. "
+        story: "Poslední místo tvého pátrání a pokračování naší cesty. ♥️<br><br> Pokud sis správně zapsla všechna čísla, je čas na odměnu!"
     }
 ];
 
@@ -97,16 +97,15 @@ function render() {
 
         content.innerHTML = `
             <div class="card">
-                <h1>🏍️ Cesta za dobrodružstvím</h1>
+                <h1>🏍️ Cesta za dobrodružstvím 🏍️</h1>
 
                 <p class="subtitle">
                     Ahoj lásko.<br><br>
 
-                    Dnes tě čeká malá výprava.<br>
-                    Každá zastávka ukrývá další část příběhu.<br><br>
+                    Dnes tě čeká Tvá výprava.<br>
+                    Každá zastávka ukrývá nějaké tajemství a zároveň otevírá cestu dál.<br><br>
+                    Dokážeš najít všechna místa správně?<br><br>
 
-                    Není důležitý cíl.<br>
-                    Důležitá je cesta.
                 </p>
 
                 <button onclick="startGame()">
@@ -131,18 +130,21 @@ function render() {
 
         content.innerHTML = `
     		<div class="card">
-        		<h1>🔐 Poslední úkol</h1>
+        		<h1>🔐 Poslední úkol 🔐</h1>
 				
         		<p class="story">
-            		Během cesty jsi získala několik tajných čísel.<br><br>
+            		Během cesty jsi získala několik tajných čísel.<br>
             		Zadej je ve správném pořadí.
         		</p>
 
-        		<input
-            		id="final-code"
-            		type="text"
-            		placeholder="Tajný kód"
-        		>
+        		<div style="text-align:center;">
+                    <input
+            		    id="final-code"
+            		    type="text"
+            		    placeholder="Tajný kód"
+                        style="text-align: center;"
+        		    >   
+                </div>
 
         		<br><br>
 
@@ -151,6 +153,10 @@ function render() {
         		</button>
 
         		<div id="final-result"></div>
+
+                <button class="reset-button" onclick="resetGame()">
+    			🔄 Restartovat hru
+			    </button>
 
     		</div>
 `;
@@ -165,7 +171,7 @@ function render() {
     content.innerHTML = `
         <div class="card">
 
-            <h2>🔎 Malá nápověda</h2>
+            <h2>🔎 TVÁ NÁPOVĚDA 🔎</h2>
 
             <p class="story">
                 ${stop.clue}
@@ -201,21 +207,14 @@ function render() {
 
             <p class="story">
                 ${stop.story}
-            </p>
-
-			<p style="text-align:center";>
-    			🔐 Obnovovací kód:
-    			<strong>${stop.code}</strong><br>
-				(Ulož si ho pro případ potíží)
-			</p>
+            </p>			
 
 			<p style="text-align:center;">
     			⭐ Tajné číslo:
     			<strong>${stop.secret}</strong><br>
     			(Zapiš si ho, bude se hodit na konci.)
-				</p>
+			</p>        
 			
-
             <button onclick="nextStop()">
                 Pokračovat
             </button>
@@ -223,6 +222,12 @@ function render() {
 			<button class="reset-button" onclick="resetGame()">
     			🔄 Restartovat hru
 			</button>
+
+            <p style="text-align:center";>
+    			🔐 Obnovovací kód:
+    			<strong>${stop.code}</strong><br>
+				(Ulož si ho pro případ potíží)
+			</p>
 
            <div class="progress-container">
                 <div
@@ -314,7 +319,7 @@ function checkLocation() {
     if(DEBUG_MODE){
 
     document.getElementById("gps-result").innerHTML = `
-        <p style="color:orange">
+        <p style="color:orange; text-align:center;">
             🧪 DEBUG MODE
         </p>
 
@@ -396,20 +401,33 @@ function checkFinalCode() {
     if(enteredCode === FINAL_CODE){
 
         document.getElementById("final-result").innerHTML = `
-            <p style="color:lightgreen;">
+            <p style="color:lightgreen; text-align:center;">
                 🎁 Správně!
             </p>
 
-            <p>
-                Tvůj dárek čeká na místě,
-                kde si doma odkládáš motorkářské rukavice.
+            <p style="text-align:center;">
+                Tvůj dárek si vozíš celou dobu s sebou. <br>
+                Mrkni pod sedačku. ♥️🤭
             </p>
         `;
+        confetti({
+            particleCount: 150,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+
+        confetti({
+            particleCount: 150,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
 
     } else {
 
         document.getElementById("final-result").innerHTML = `
-            <p style="color:#ff8080;">
+            <p style="color:#ff8080; text-align:center;">
                 ❌ To není správný kód.
             </p>
         `;
