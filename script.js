@@ -5,7 +5,7 @@ const STOPS = [
         lat: 50.074,
         lng: 14.859,
         radius: 150,
-        clue: "Tam, kde se naše cesty poprvé protnuly.",
+        clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den!",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
@@ -114,7 +114,7 @@ function render() {
     content.innerHTML = `
         <div class="card">
 
-            <h2>🔎 Další stopa</h2>
+            <h2>🔎 Malá nápověda</h2>
 
             <p class="story">
                 ${stop.clue}
