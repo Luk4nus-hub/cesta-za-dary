@@ -1,9 +1,9 @@
-const DEBUG_MODE = false;
+const DEBUG_MODE = false; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
 const STOPS = [
     {
         title: "Orlen Úvaly",
         icon: "⛽",
-        lat: 50.0907142,
+        lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
         lng: 14.6133172,
         radius: 75,
         clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den! ⛽",
@@ -110,7 +110,11 @@ function render() {
 
                 <button class="reset-btn" onclick="resetGame()">
                     Hrát znovu
-                </button>                
+                </button>
+
+				<div class="footer">
+                    Verze 3 • S GPS ověřením
+                </div>
 
             </div>
         `;
@@ -139,6 +143,10 @@ function render() {
 			<button class="reset-button" onclick="resetGame()">
     			🔄 Restartovat hru
 			</button>
+
+			<div class="footer">
+                    Verze 3 • S GPS ověřením
+            </div>
 
         </div>
     `;
@@ -291,7 +299,7 @@ function checkLocation() {
                 "gps-result"
             ).innerHTML = `
                 <p style="color:#ff8080; text-align:center;">
-                    GPS není dostupná
+                    GPS není dostupná.<br>
                     Zkontroluj, že je povolena poloha a obnov stránku.
                 </p>
             `;
