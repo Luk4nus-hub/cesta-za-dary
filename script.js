@@ -167,7 +167,7 @@ function render() {
             </div>
             
             <div class="footer">
-                Verze 1 • Bez GPS
+                Verze 3 • S GPS ověřením
             </div>
 
         </div>
@@ -208,19 +208,23 @@ function checkLocation() {
 
     if(DEBUG_MODE){
 
-    document.getElementById(
-        "gps-result"
-    ).innerHTML = `
+    document.getElementById("gps-result").innerHTML = `
         <p style="color:orange">
-            🧪 Debug mód aktivní
+            🧪 DEBUG MODE
         </p>
 
+        <p>
+            LAT: ${position.coords.latitude}<br>
+            LNG: ${position.coords.longitude}
+        </p>
+		
         <button onclick="showStory()">
-            Pokračovat
+            Přeskočit GPS kontrolu
         </button>
     `;
 
-    return;}
+    return;
+}
 
     navigator.geolocation.getCurrentPosition(
 
