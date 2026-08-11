@@ -2,7 +2,10 @@ const STOPS = [
     {
         title: "Orlen Český Brod",
         icon: "⛽",
-        story: "Právě tady se naše cesty poprvé protnuly. Tehdy to byl obyčejný den. A přesto odstartoval příběh, který pokračuje dodnes."
+        lat: 50.074,
+        lng: 14.859,
+        radius: 150,
+        story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
         title: "Kavárna",
