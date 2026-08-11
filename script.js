@@ -3,9 +3,9 @@ const STOPS = [
     {
         title: "Orlen Úvaly",
         icon: "⛽",
-        lat: 50.0689311,
-        lng: 14.7308231,
-        radius: 50,
+        lat: 50.0907142,
+        lng: 14.6133172,
+        radius: 75,
         clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
@@ -14,7 +14,7 @@ const STOPS = [
         icon: "🍦",
 		lat: 50.1624961,
         lng: 14.7507606,
-        radius: 50,
+        radius: 75,
 		clue: "Docela nám to teklo po rukách! 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
@@ -23,7 +23,7 @@ const STOPS = [
         icon: "🏖️👙🐸",
 		lat: 50.2682533,
         lng: 14.6513617,
-        radius: 20,
+        radius: 150,
 		clue: "Víš, že žáby nemají uši?!. 🏖️👙🐸",
         story: "Na koupání byla moc zima...👀"
     }
@@ -83,6 +83,11 @@ function render() {
                 <button onclick="startGame()">
                     Začít
                 </button>
+
+                <div class="footer">
+                    Verze 3 • S GPS ověřením
+                </div>
+
             </div>
         `;
 
@@ -105,7 +110,7 @@ function render() {
 
                 <button class="reset-btn" onclick="resetGame()">
                     Hrát znovu
-                </button>
+                </button>                
 
             </div>
         `;
@@ -242,7 +247,7 @@ function checkLocation() {
                 document.getElementById(
                     "gps-result"
                 ).innerHTML = `
-                    <p style="color:lightgreen">
+                    <p style="color:lightgreen; text-align:center;">
                         ✅ Správné místo nalezeno
                     </p>
 
@@ -256,7 +261,7 @@ function checkLocation() {
                 document.getElementById(
                     "gps-result"
                 ).innerHTML = `
-                    <p style="color:#ff8080">
+                    <p style="color:#ff8080; text-align:center;">
                         ❌ Ještě nejsi na správném místě
                     </p>
 
@@ -276,8 +281,9 @@ function checkLocation() {
             document.getElementById(
                 "gps-result"
             ).innerHTML = `
-                <p style="color:#ff8080">
+                <p style="color:#ff8080; text-align:center;">
                     GPS není dostupná
+                    Zkontroluj, že je povolena poloha a obnov stránku.
                 </p>
             `;
 
