@@ -76,5 +76,30 @@ button:hover {
 
 .reset-btn {
     background: #475569;
-    color: white;
+
+}
+
+.progress-container {
+    width: 100%;
+    height: 14px;
+    background: #334155;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #f59e0b,
+        #fbbf24
+    );
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px;
+    opacity: .8;
 }
