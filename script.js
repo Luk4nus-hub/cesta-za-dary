@@ -3,6 +3,7 @@ const STOPS = [
     {
         title: "Orlen Úvaly",
         icon: "⛽",
+		code: "ORLEN",
         lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
         lng: 14.6133172,
         radius: 75,
@@ -12,6 +13,7 @@ const STOPS = [
     {
         title: "Zmrzlina Čelákovice",
         icon: "🍦",
+		code: "ZMRZKA",
 		lat: 50.1624961,
         lng: 14.7507606,
         radius: 75,
@@ -21,6 +23,7 @@ const STOPS = [
     {
         title: "Las Vegas",
         icon: "🏖️👙🐸",
+		code: "VEGAS",
 		lat: 50.2682533,
         lng: 14.6513617,
         radius: 150,
@@ -83,6 +86,10 @@ function render() {
                 <button onclick="startGame()">
                     Začít
                 </button>
+
+				<button onclick="recoverGame()">
+    				🔓 Obnovit postup
+				</button>
 
                 <div class="footer">
                     Verze 3 • S GPS ověřením
@@ -167,6 +174,12 @@ function render() {
                 ${stop.story}
             </p>
 
+			<p style="text-align:center";>
+    			🔐 Obnovovací kód:
+    			<strong>${stop.code}</strong><br>
+				(Ulož si ho pro případ potíží)
+			</p>
+
             <button onclick="nextStop()">
                 Pokračovat
             </button>
@@ -215,6 +228,40 @@ function resetGame() {
     localStorage.removeItem("phase");
     current = -1;
     phase = "clue";
+    render();
+}
+
+function recoverGame() {
+    const code = prompt("Zadej obnovovací kód:");
+
+    if(!code){
+        return;
+    }
+
+    const stopIndex = STOPS.findIndex(
+        stop => stop.code === code.toUpperCase()
+    );
+
+    if(stopIndex === -1){
+
+        alert("Neplatný kód.");
+
+        return;
+    }
+
+    current = stopIndex + 1;
+    phase = "clue";
+
+    localStorage.setItem(
+        "station",
+        current
+    );
+
+    localStorage.setItem(
+        "phase",
+        phase
+    );
+
     render();
 }
 
