@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    min-height: 100vh;
     background: #0f172a;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .container {
@@ -13,27 +18,63 @@ body {
 
 .card {
     background: #1e293b;
-    padding: 25px;
     border-radius: 20px;
+    padding: 30px;
     margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
 }
 
 h1, h2 {
     text-align: center;
 }
 
-button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background: orange;
+.story {
+    line-height: 1.7;
+}
+
+.station {
+    color: #fbbf24;
     font-weight: bold;
-    cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .progress {
     text-align: center;
     font-size: 24px;
     margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    background: #f59e0b;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.subtitle {
+    text-align: center;
+    opacity: .9;
+    line-height: 1.8;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    opacity: .6;
+    font-size: 13px;
+}
+
+.reset-btn {
+    background: #475569;
+    color: white;
 }
