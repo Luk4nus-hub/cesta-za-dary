@@ -5,6 +5,7 @@ const STOPS = [
         lat: 50.074,
         lng: 14.859,
         radius: 150,
+        clue: "Tam, kde se naše cesty poprvé protnuly.",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
@@ -45,6 +46,7 @@ const STOPS = [
 ];
 
 let current = parseInt(localStorage.getItem("station")) ?? -1;
+let phase = localStorage.getItem("phase") || "clue";
 
 if (isNaN(current)) {
     current = -1;
@@ -107,6 +109,27 @@ function render() {
 
     const stop = STOPS[current];
 
+    if (phase === "clue") {
+
+    content.innerHTML = `
+        <div class="card">
+
+            <h2>🔎 Další stopa</h2>
+
+            <p class="story">
+                ${stop.clue}
+            </p>
+
+            <button onclick="showStory()">
+                Jsem na místě
+            </button>
+
+        </div>
+    `;
+
+    return;
+}
+
     content.innerHTML = `
         <div class="card">
 
@@ -145,18 +168,28 @@ function render() {
 
 function startGame() {
     current = 0;
+    phase = "clue";
     localStorage.setItem("station", current);
+    localStorage.setItem("phase", phase);
     render();
 }
 
 function nextStop() {
     current++;
+    phase = "clue";
     localStorage.setItem("station", current);
+    localStorage.setItem("phase", phase);
     render();
 }
 
 function resetGame() {
     localStorage.removeItem("station");
     current = -1;
+    render();
+}
+
+function showStory() {
+    phase = "story";
+    localStorage.setItem("phase", phase);
     render();
 }
