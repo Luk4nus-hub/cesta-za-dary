@@ -1,47 +1,30 @@
 const STOPS = [
     {
-        title: "Orlen Český Brod",
+        title: "Orlen Úvaly",
         icon: "⛽",
-        lat: 50.074,
-        lng: 14.859,
-        radius: 150,
-        clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den!",
+        lat: 50.0689311,
+        lng: 14.7308231,
+        radius: 50,
+        clue: "Tam, kde se naše cesty poprvé protnuly. Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
     {
-        title: "Kavárna",
-        icon: "☕",
-        story: "Každé dobrodružství potřebuje zastávku na doplnění energie."
+        title: "Zmrzlina Čelákovice",
+        icon: "🍦",
+	lat: 50.1624961,
+        lng: 14.7507606,
+        radius: 50,
+	clue: "Docela nám to teklo po rukách! 🍦",
+        story: "Tohle byla naše první společná zmrzka."
     },
     {
-        title: "Vyhlídka",
-        icon: "🌄",
-        story: "Někdy je potřeba zastavit a podívat se kolem sebe."
-    },
-    {
-        title: "Lesní cesta",
-        icon: "🌲",
-        story: "Ne všechny cesty jsou rovné. Ale právě to je dělá zajímavými."
-    },
-    {
-        title: "Místo vzpomínek",
-        icon: "📸",
-        story: "Každé místo skrývá nějaký příběh."
-    },
-    {
-        title: "Moto zastávka",
-        icon: "🏍️",
-        story: "Silnice pod koly. Vítr kolem helmy. A další stopa před tebou."
-    },
-    {
-        title: "Předposlední stopa",
-        icon: "🧭",
-        story: "Cíl už je opravdu blízko."
-    },
-    {
-        title: "Finální místo",
-        icon: "❤️",
-        story: "Poslední zastávka dnešního dobrodružství."
+        title: "Las Vegas",
+        icon: "🏖️👙🐸",
+	lat: 50.2682533,
+        lng: 14.6513617,
+        radius: 20,
+	clue: "Víš, že žáby nemají uši?!. 🏖️👙🐸"
+        story: "Na koupání byla moc zima...👀"
     }
 ];
 
