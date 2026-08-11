@@ -1,9 +1,11 @@
-const DEBUG_MODE = false; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
+const DEBUG_MODE = true; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
+const FINAL_CODE = "88888"; //Kód změnit dle toho co si bude člověk zapisovat
 const STOPS = [
     {
         title: "Orlen Úvaly",
         icon: "⛽",
-		code: "ORLEN",
+		code: "ORLEN",	//Kód pro obnovu hry
+		secret: "8",	//Finální kód, který odemkne poslední stránku
         lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
         lng: 14.6133172,
         radius: 75,
@@ -14,6 +16,7 @@ const STOPS = [
         title: "Zmrzlina Čelákovice",
         icon: "🍦",
 		code: "ZMRZKA",
+		secret: "8",
 		lat: 50.1624961,
         lng: 14.7507606,
         radius: 75,
@@ -24,6 +27,7 @@ const STOPS = [
         title: "Las Vegas",
         icon: "🏖️👙🐸",
 		code: "VEGAS",
+		secret: "8",
 		lat: 50.2682533,
         lng: 14.6513617,
         radius: 150,
@@ -34,16 +38,18 @@ const STOPS = [
         title: "Hostivar H1",
         icon: "🍺",
 		code: "HOSTIVAR",
+		secret: "8",
 		lat: 50.0463592,
         lng: 14.5494106,
         radius: 50,
-		clue: "",
+		clue: "Tam, kam se Bobeš vždy nemůže dočkat. 🍺",
         story: "Tady si vždy dáme do nosu! Tak samo i teď, jen tedy nealko."
     },
 	{
         title: "Náš Domov",
         icon: "🏠",
 		code: "DOMOV",
+		secret: "8",
 		lat: 50.0468075,
         lng: 14.5553103,
         radius: 50,
@@ -124,27 +130,30 @@ function render() {
     if (current >= STOPS.length) {
 
         content.innerHTML = `
-            <div class="card">
+    		<div class="card">
+        		<h1>🔐 Poslední úkol</h1>
+				
+        		<p class="story">
+            		Během cesty jsi získala několik tajných čísel.<br><br>
+            		Zadej je ve správném pořadí.
+        		</p>
 
-                <h1>❤️ Gratuluji</h1>
+        		<input
+            		id="final-code"
+            		type="text"
+            		placeholder="Tajný kód"
+        		>
 
-                <p class="story">
-                    Dorazila jsi až sem.<br><br>
+        		<br><br>
 
-                    Dnešní cesta možná končí,
-                    ale doufám, že naše společná cesta bude pokračovat ještě hodně dlouho.
-                </p>
+        		<button onclick="checkFinalCode()">
+            		Odemknout překvapení
+        		</button>
 
-                <button class="reset-btn" onclick="resetGame()">
-                    Hrát znovu
-                </button>
+        		<div id="final-result"></div>
 
-				<div class="footer">
-                    Verze 3 • S GPS ověřením
-                </div>
-
-            </div>
-        `;
+    		</div>
+`;
 
         return;
     }
@@ -199,6 +208,13 @@ function render() {
     			<strong>${stop.code}</strong><br>
 				(Ulož si ho pro případ potíží)
 			</p>
+
+			<p style="text-align:center;">
+    			⭐ Tajné číslo:
+    			<strong>${stop.secret}</strong><br>
+    			(Zapiš si ho, bude se hodit na konci.)
+				</p>
+			
 
             <button onclick="nextStop()">
                 Pokračovat
@@ -370,4 +386,33 @@ function checkLocation() {
 
     );
 
+}
+
+function checkFinalCode() {
+
+    const enteredCode =
+        document.getElementById("final-code").value;
+
+    if(enteredCode === FINAL_CODE){
+
+        document.getElementById("final-result").innerHTML = `
+            <p style="color:lightgreen;">
+                🎁 Správně!
+            </p>
+
+            <p>
+                Tvůj dárek čeká na místě,
+                kde si doma odkládáš motorkářské rukavice.
+            </p>
+        `;
+
+    } else {
+
+        document.getElementById("final-result").innerHTML = `
+            <p style="color:#ff8080;">
+                ❌ To není správný kód.
+            </p>
+        `;
+
+    }
 }
