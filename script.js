@@ -98,13 +98,14 @@ function render() {
 
         content.innerHTML = `
             <div class="card">
-                <h1>🏍️ Cesta za dobrodružstvím 🏍️</h1>
+                <h1>🏍️ SVÁTEČNÍ ESKAPÁDY</h1>
 
                 <p class="subtitle">
                     Ahoj lásko.<br><br>
 
-                    Dnes tě čeká Tvá výprava.<br>
-                    Každá zastávka ukrývá nějaké tajemství a zároveň otevírá cestu dál.<br><br>
+                    Dnes tě čeká Tvá výprava za dobrodružstvím.<br>
+					Potřebuji, abys dnes dorazila brzo domů, připravila se, a až budeš v sedle, započala cestu.<br><br>
+                    Bude to výlet o několika zastávkách. Každá zastávka ukrývá nějaké tajemství a zároveň otevírá cestu dál.<br><br>
                     Dokážeš najít všechna místa správně?<br><br>
 
                 </p>
