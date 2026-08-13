@@ -7,9 +7,9 @@ const STOPS = [
 		code: "ORLEN",	//Kód pro obnovu hry
 		secret: "8",	//Finální kód, který odemkne poslední stránku
         photo: "images/orlen.jpg",  //Fotka, která se zobrazí na stránce s příběhem
-        lat: 50.0907142, //Změnit souřadnice na správnou lokalitu -> teď je tam práce
-        lng: 14.6133172,
-        radius: 75,
+        lat: 50.0689311, 
+        lng: 14.7308231,
+        radius: 75, //Oblast ve které dojde k validaci pozice
         clue: "Tam, kde se naše cesty poprvé protnuly.<br>Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
@@ -55,7 +55,7 @@ const STOPS = [
         lng: 14.5553103,
         radius: 50,
 		clue: "Další místo leží těsně před tím, než auta a motorky zmizí pod zemí. 🏠🏍️",
-        story: "Poslední místo tvého pátrání a pokračování naší cesty. ♥️<br><br> Pokud sis správně zapsla všechna čísla, je čas na odměnu!"
+        story: "Poslední místo tvého pátrání a první místo naší společné cesty. ♥️<br><br> Pokud sis správně zapsla všechna čísla, je čas na odměnu!"
     }
 ];
 
@@ -173,7 +173,7 @@ function render() {
     content.innerHTML = `
         <div class="card">
 
-            <h2>🔎 TVÁ NÁPOVĚDA 🔎</h2>
+            <h2>🔎 TVÁ NÁPOVĚDA</h2>
 
             <p class="story">
                 ${stop.clue}
@@ -413,8 +413,8 @@ function checkFinalCode() {
             </p>
 
             <p style="text-align:center;">
-                Tvůj dárek si vozíš celou dobu s sebou. <br>
-                Mrkni pod sedačku. ♥️🤭
+                Tvůj dárek si vozíš celou dobu s sebou...Jsem to jáááááá! 😗 <br>
+                Ale taky mrkni pod sedačku. ♥️🤭
             </p>
         `;
         confetti({
