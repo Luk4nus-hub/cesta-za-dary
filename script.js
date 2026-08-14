@@ -1,4 +1,4 @@
-const DEBUG_MODE = true; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
+const DEBUG_MODE = false; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
 const FINAL_CODE = "88888"; //Kód změnit dle toho co si bude člověk zapisovat
 const STOPS = [
     {
