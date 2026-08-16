@@ -54,7 +54,7 @@ const STOPS = [
         icon: "🏠",
 		code: "DOMOV",
 		secret: "8",
-		photo: "images/domov.jpg",
+        photo: "images/domov.jpg",
 		lat: 50.0468075,
         lng: 14.5553103,
         radius: 50,
@@ -424,6 +424,22 @@ function checkFinalCode() {
                 <strong>Ale taky mrkni pod sedačku. ♥️🤭</strong><br>
                 ⬇️
             </p>
+
+          <div class="album-slowness">   
+                <h2>📸 Naše malé album</h2>
+
+                <div class="album">
+
+                <img src="images/orlen.jpg" class="album-photo">
+                <img src="images/zmrzka.jpg" class="album-photo">
+                <img src="images/vegas.jpg" class="album-photo">
+                <img src="images/hostivar.jpg" class="album-photo">
+                <img src="images/domov.jpg" class="album-photo">
+
+                </div>
+            </div>
+
+            
         `;
         confetti({
             particleCount: 150,
