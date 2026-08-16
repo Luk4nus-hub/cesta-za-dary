@@ -1,4 +1,4 @@
-const DEBUG_MODE = false; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
+const DEBUG_MODE = true; //Tohle přepnout na false až to půjde live, jinak to přepíná do debugu, abych mohl testovat
 const FINAL_CODE = "88888"; //Kód změnit dle toho co si bude člověk zapisovat
 const STOPS = [
     {
@@ -7,8 +7,8 @@ const STOPS = [
 		code: "ORLEN",	//Kód pro obnovu hry
 		secret: "8",	//Finální kód, který odemkne poslední stránku
         photo: "images/orlen.jpg",  //Fotka, která se zobrazí na stránce s příběhem
-        lat: 50.0689311, 
-        lng: 14.7308231,
+        lat:    50.0687000, 
+        lng: 	14.3947000,
         radius: 75, //Oblast ve které dojde k validaci pozice
         clue: "Tam, kde se naše cesty poprvé protnuly.<br>Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
@@ -18,6 +18,7 @@ const STOPS = [
         icon: "🍦",
 		code: "ZMRZKA",
 		secret: "8",
+        photo: "images/zmrzka.jpg",
 		lat: 50.1624961,
         lng: 14.7507606,
         radius: 75,
@@ -29,6 +30,7 @@ const STOPS = [
         icon: "🐸",
 		code: "VEGAS",
 		secret: "8",
+        photo: "images/vegas.jpg",
 		lat: 50.2682533,
         lng: 14.6513617,
         radius: 150,
@@ -40,6 +42,7 @@ const STOPS = [
         icon: "🍺",
 		code: "HOSTIVAR",
 		secret: "8",
+        photo: "images/hostivar.jpg",
 		lat: 50.0463592,
         lng: 14.5494106,
         radius: 50,
@@ -354,7 +357,7 @@ function checkLocation() {
                 document.getElementById(
                     "gps-result"
                 ).innerHTML = `
-                    <p style="color:lightgreen; text-align:center;">
+                    <p class="location-found">
                         ✅ Správné místo nalezeno
                     </p>
 
@@ -368,11 +371,11 @@ function checkLocation() {
                 document.getElementById(
                     "gps-result"
                 ).innerHTML = `
-                    <p style="color:#ff8080; text-align:center;">
+                    <p class="location-not-found">
                         ❌ Ještě nejsi na správném místě
                     </p>
 
-                    <p>
+                    <p style="text-align:center;">
                         Zbývá přibližně
                         ${Math.round(distance)}
                         metrů
@@ -388,7 +391,7 @@ function checkLocation() {
             document.getElementById(
                 "gps-result"
             ).innerHTML = `
-                <p style="color:#ff8080; text-align:center;">
+                <p class="location-not-found">
                     GPS není dostupná.<br>
                     Zkontroluj, že je povolena poloha a obnov stránku.
                 </p>
@@ -408,13 +411,17 @@ function checkFinalCode() {
     if(enteredCode === FINAL_CODE){
 
         document.getElementById("final-result").innerHTML = `
-            <p style="color:lightgreen; text-align:center;">
+            <p class="location-found">
                 🎁 Správně!
             </p>
 
-            <p style="text-align:center;">
-                Tvůj dárek si vozíš celou dobu s sebou...Jsem to jáááááá! 😗 <br>
-                Ale taky mrkni pod sedačku. ♥️🤭
+            <p class="final-text">
+                Tvůj dárek si vozíš celou dobu s sebou...Jsem to jáááááá! 😗 <br>                
+            </p>
+
+            <p class="final-gift">
+                <strong>Ale taky mrkni pod sedačku. ♥️🤭</strong><br>
+                ⬇️
             </p>
         `;
         confetti({
