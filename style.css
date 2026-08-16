@@ -192,3 +192,24 @@ button:hover {
     animation: photoReveal 1.2s ease 15s forwards;
 }
 
+.album {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.album-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.album-slowness {
+    animation: photoReveal 1.5s ease 20s forwards;
+}
