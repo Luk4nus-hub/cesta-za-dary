@@ -54,6 +54,7 @@ const STOPS = [
         icon: "🏠",
 		code: "DOMOV",
 		secret: "8",
+		photo: "images/domov.jpg",
 		lat: 50.0468075,
         lng: 14.5553103,
         radius: 50,
