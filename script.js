@@ -108,7 +108,7 @@ function render() {
                     Ahoj lásko.<br><br>
 
                     Dnes tě čeká Tvá výprava za dobrodružstvím.<br>
-					Potřebuji, abys dnes dorazila brzo domů, připravila se, a až budeš v sedle, započala cestu.<br><br>
+					Jelikož jsem neočekával, že dnes budeš muset být v práci dlouho a zároveň nemá být hezky...Budeš se muset vydat na výpravu někdy později. Nicméně až se tak stane, započni výpravu.<br><br>
                     Bude to výlet o několika zastávkách. Každá zastávka ukrývá nějaké tajemství a zároveň otevírá cestu dál.<br><br>
                     Dokážeš najít všechna místa správně?<br><br>
 
@@ -430,11 +430,15 @@ function checkFinalCode() {
 
                 <div class="album">
 
-                <img src="images/orlen.jpg" class="album-photo">
-                <img src="images/zmrzka.jpg" class="album-photo">
-                <img src="images/vegas.jpg" class="album-photo">
-                <img src="images/hostivar.jpg" class="album-photo">
-                <img src="images/domov.jpg" class="album-photo">
+                <img src="images/1.jpg" class="album-photo">
+                <img src="images/2.jpg" class="album-photo">
+                <img src="images/3.jpg" class="album-photo">
+                <img src="images/4.jpg" class="album-photo">
+                <img src="images/5.jpg" class="album-photo">
+				<img src="images/6.jpg" class="album-photo">
+				<img src="images/7.jpg" class="album-photo">
+				<img src="images/8.jpg" class="album-photo">
+				<img src="images/9.jpg" class="album-photo">
 
                 </div>
             </div>
