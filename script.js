@@ -392,7 +392,7 @@ function(error){
     if(error.code === 1){
 
         document.getElementById("gps-result").innerHTML = `
-            <p style="color:#ff8080; text-align:center;">
+            <p class="location-not-found">
                 📍 Poloha nebyla povolena.
                 <br><br>
                 V Safari povol přístup k poloze a zkus to znovu.
@@ -403,7 +403,7 @@ function(error){
     }
 
     document.getElementById("gps-result").innerHTML = `
-        <p style="color:#ff8080; text-align:center;">
+        <p class="location-not-found">
             Chyba GPS (${error.code})
             <br><br>
             ${error.message}
