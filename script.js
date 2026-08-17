@@ -5,11 +5,11 @@ const STOPS = [
         title: "ORLEN ÚVALY",
         icon: "⛽",
 		code: "ORLEN",	//Kód pro obnovu hry
-		secret: "8",	//Finální kód, který odemkne poslední stránku
+		secret: "1",	//Finální kód, který odemkne poslední stránku
         photo: "images/orlen.jpg",  //Fotka, která se zobrazí na stránce s příběhem
         lat:    50.0687000, 
         lng: 	14.3947000,
-        radius: 75, //Oblast ve které dojde k validaci pozice
+        radius: 20, //Oblast ve které dojde k validaci pozice
         clue: "Tam, kde se naše cesty poprvé protnuly.<br>Dobrý den! ⛽",
         story: "Právě tady se naše cesty poprvé protnuly."
     },
@@ -17,11 +17,11 @@ const STOPS = [
         title: "ZMRZLINA ČELÁKOVICE",
         icon: "🍦",
 		code: "ZMRZKA",
-		secret: "8",
+		secret: "7",
         photo: "images/zmrzka.jpg",
 		lat: 50.1624961,
         lng: 14.7507606,
-        radius: 75,
+        radius: 50,
 		clue: "Moc jsme při tom teda nemlčeli... 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
@@ -41,11 +41,11 @@ const STOPS = [
         title: "HOSTIVAR H1",
         icon: "🍺",
 		code: "HOSTIVAR",
-		secret: "8",
+		secret: "2",
         photo: "images/hostivar.jpg",
 		lat: 50.0463592,
         lng: 14.5494106,
-        radius: 50,
+        radius: 25,
 		clue: "Tam, kam se Bobeš vždy nemůže dočkat. 🍺",
         story: "Tady si vždy dáme do nosu! Tak samo i teď, jen tedy nealko."
     },
@@ -53,11 +53,11 @@ const STOPS = [
         title: "NÁŠ DOMOV",
         icon: "🏠",
 		code: "DOMOV",
-		secret: "8",
+		secret: "6",
         photo: "images/domov.jpg",
 		lat: 50.0468075,
         lng: 14.5553103,
-        radius: 50,
+        radius: 20,
 		clue: "Další místo leží těsně před tím, než auta a motorky zmizí pod zemí. 🏠🏍️",
         story: "Poslední místo tvého pátrání a první místo naší společné cesty. ♥️<br><br> Pokud sis správně zapsla všechna čísla, je čas na odměnu!"
     }
@@ -108,7 +108,7 @@ function render() {
                     Ahoj lásko.<br><br>
 
                     Dnes tě čeká Tvá výprava za dobrodružstvím.<br>
-					Jelikož jsem neočekával, že dnes budeš muset být v práci dlouho a zároveň nemá být hezky...Budeš se muset vydat na výpravu někdy později. Nicméně až se tak stane, započni výpravu.<br><br>
+					Jelikož jsem neočekával, že dnes budeš muset být v práci dlouho a zároveň nemá být hezky...<br>Budeš se muset vydat na výpravu někdy později. Nicméně až se tak stane, započni výpravu.<br><br>
                     Bude to výlet o několika zastávkách. Každá zastávka ukrývá nějaké tajemství a zároveň otevírá cestu dál.<br><br>
                     Dokážeš najít všechna místa správně?<br><br>
 
@@ -123,7 +123,7 @@ function render() {
 				</button>
 
                 <div class="footer">
-                    Verze 3 • S GPS ověřením
+                    Verze 5 • LIVE
                 </div>
 
             </div>
@@ -193,7 +193,7 @@ function render() {
 			</button>
 
 			<div class="footer">
-                    Verze 3 • S GPS ověřením
+                    Verze 5 • LIVE
             </div>
 
         </div>
@@ -252,7 +252,7 @@ function render() {
             </div>
             
             <div class="footer">
-                Verze 3 • S GPS ověřením
+                Verze 5 • LIVE
             </div>
 
         </div>
@@ -462,7 +462,7 @@ function checkFinalCode() {
     } else {
 
         document.getElementById("final-result").innerHTML = `
-            <p style="color:#ff8080; text-align:center;">
+            <p style="location-not-found">
                 ❌ To není správný kód.
             </p>
         `;
