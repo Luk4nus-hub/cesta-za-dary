@@ -387,19 +387,31 @@ function checkLocation() {
 
         },
 
-        function(error){
+function(error){
 
-    document.getElementById(
-        "gps-result"
-    ).innerHTML = `
-        <p style="color:#ff8080;">
-            Chyba GPS: ${error.code}
-        </p>
-        <p>
+    if(error.code === 1){
+
+        document.getElementById("gps-result").innerHTML = `
+            <p style="color:#ff8080; text-align:center;">
+                📍 Poloha nebyla povolena.
+                <br><br>
+                V Safari povol přístup k poloze a zkus to znovu.
+            </p>
+        `;
+
+        return;
+    }
+
+    document.getElementById("gps-result").innerHTML = `
+        <p style="color:#ff8080; text-align:center;">
+            Chyba GPS (${error.code})
+            <br><br>
             ${error.message}
         </p>
     `;
+
 }
+``
 
     );
 
