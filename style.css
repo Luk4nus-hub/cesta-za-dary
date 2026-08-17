@@ -211,5 +211,6 @@ button:hover {
 }
 
 .album-slowness {
+    opacity: 0;
     animation: photoReveal 1.5s ease 20s forwards;
 }
