@@ -389,16 +389,17 @@ function checkLocation() {
 
         function(error){
 
-            document.getElementById(
-                "gps-result"
-            ).innerHTML = `
-                <p class="location-not-found">
-                    GPS není dostupná.<br>
-                    Zkontroluj, že je povolena poloha a obnov stránku.
-                </p>
-            `;
-
-        }
+    document.getElementById(
+        "gps-result"
+    ).innerHTML = `
+        <p style="color:#ff8080;">
+            Chyba GPS: ${error.code}
+        </p>
+        <p>
+            ${error.message}
+        </p>
+    `;
+}
 
     );
 
