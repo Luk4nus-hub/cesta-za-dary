@@ -21,7 +21,7 @@ const STOPS = [
         photo: "images/zmrzka.jpg",
 		lat: 50.1624961,
         lng: 14.7507606,
-        radius: 50,
+        radius: 55,
 		clue: "Moc jsme při tom teda nemlčeli... 🍦",
         story: "Tohle byla naše první společná zmrzka."
     },
